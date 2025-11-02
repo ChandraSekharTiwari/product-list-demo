@@ -1,10 +1,10 @@
-You can have a quick look at the UI with the link: chandrasekhartiwari.netlify.app/
+You can have a quick look at the UI with the link: [https://chandrasekhartiwari.netlify.app/]
 # Getting Started
 
 In the project directory, you can run:
 
 ### `npm install`
-Installs the packages the project depends on.\
+Installs the packages the project depends on.
 
 ### `npm start`
 
@@ -18,4 +18,8 @@ You will also see any lint errors in the console.
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+**ReactContext** is used for the State management.
+
+**Unit tests** are written for **Pagination Footer** component
 
