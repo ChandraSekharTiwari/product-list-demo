@@ -1,6 +1,10 @@
+You can have a quick look at the UI with the link: chandrasekhartiwari.netlify.app/
 # Getting Started
 
 In the project directory, you can run:
+
+### `npm install`
+Installs the packages the project depends on.\
 
 ### `npm start`
 
