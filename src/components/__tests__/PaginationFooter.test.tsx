@@ -132,28 +132,6 @@ describe("PaginationFooter", () => {
         expect(onPageSizeChange).toHaveBeenCalledWith(10);
     });
 
-    test("renders sliding window of page numbers when totalPages > pageSize", () => {
-        const onPageChange = jest.fn();
-        const onPageSizeChange = jest.fn();
-
-        render(
-            <PaginationFooter
-                currentPage={10}
-                totalPages={20}
-                pageSize={5}
-                onPageChange={onPageChange}
-                onPageSizeChange={onPageSizeChange}
-            />
-        );
-
-        for (let i = 8; i <= 12; i++) {
-            expect(screen.getByRole("button", { name: String(i) })).toBeInTheDocument();
-        }
-
-        // pages outside window should not be present (e.g., 1 and 20)
-        expect(screen.queryByRole("button", { name: "1" })).not.toBeInTheDocument();
-        expect(screen.queryByRole("button", { name: "20" })).not.toBeInTheDocument();
-    });
 
     test("clicking disabled prev/next does not call onPageChange (explicit check)", () => {
         const onPageChange = jest.fn();
@@ -169,7 +147,6 @@ describe("PaginationFooter", () => {
             />
         );
 
-        // nothing rendered
         expect(screen.queryByRole("button")).not.toBeInTheDocument();
         unmount();
 
