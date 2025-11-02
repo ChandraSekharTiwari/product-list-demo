@@ -1,0 +1,36 @@
+.productCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 225px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 1rem;
+  max-height: 345px;
+  text-align: center;
+  background: #fafafa;
+  transition: box-shadow 0.2s ease-in-out;
+
+  &:hover {
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  img {
+    max-width: 100%;
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 0.5rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    text-align: left;
+  }
+
+  p {
+    color: #420;
+    font-weight: bold;
+    text-align: left;
+  }
+}

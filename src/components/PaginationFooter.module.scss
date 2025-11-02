@@ -1,0 +1,48 @@
+.footerContainer {
+  background-color: aliceblue;
+  position: sticky;
+  bottom: 0;
+  border-top: 1px solid #ddd;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  & > div {
+    padding: 1rem 2rem;
+  }
+}
+
+.paginationFooter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 0;
+}
+
+.pageButton,
+.navButton {
+  background-color: #f3f3f3;
+  border: 1px solid #ddd;
+  color: #333;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  &:hover:not(:disabled) {
+    background-color: #e5e5e5;
+  }
+}
+
+.active {
+  background-color: #007bff;
+  color: #fff;
+  border-color: #007bff;
+}
