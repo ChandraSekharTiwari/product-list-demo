@@ -1,3 +1,5 @@
+@import '../styles/globals';
+
 .filterBar {
   display: flex;
   justify-content: center;
@@ -8,36 +10,39 @@
   position: sticky;
   top: 0;
   width: 100%;
-  border-bottom: 1px solid #ddd;
-  background: aliceblue;
+  border-bottom: 1px solid $border-color;
+  background: $surface-bg;
 }
 
 .searchBox {
   padding: 0.5rem 1rem;
   font-size: 1rem;
-  border: 1px solid #ddd;
+  border: 1px solid $border-color;
   border-radius: 5px;
   width: 220px;
+  font-family: inherit;
 
   &:focus {
     outline: none;
-    border-color: #007bff;
+    border-color: $primary-color;
   }
 
   &:hover {
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: $box-shadow;
   }
 }
 
 .dropdown {
   padding: 0.5rem;
   border-radius: 5px;
-  border: 1px solid #ddd;
+  border: 1px solid $border-color;
   font-size: 1rem;
   min-width: 160px;
+  font-family: inherit;
 }
 
 select,
 select option {
   text-transform: capitalize;
+  font-family: inherit;
 }

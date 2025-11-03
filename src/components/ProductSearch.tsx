@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./ProductSearch.module.scss";
+import { debounce } from "../utils";
 
 type Props = {
   searchTerm: string;
@@ -16,13 +17,28 @@ const ProductSearch: React.FC<Props> = ({
   selectedCategory,
   handleCategoryChange,
 }) => {
+  const [searchInput, setSearchInput] = React.useState(searchTerm);
+  const debouncedHandleSearchChange = React.useMemo(
+    () =>
+      debounce(
+        (e: React.ChangeEvent<HTMLInputElement>) => handleSearchChange(e),
+        300
+      ),
+    [handleSearchChange]
+  );
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchInput(e.target.value);
+    debouncedHandleSearchChange(e);
+  };
+
   return (
     <div className={styles.filterBar}>
       <input
         type="text"
         placeholder="Search"
-        value={searchTerm}
-        onChange={handleSearchChange}
+        value={searchInput}
+        onChange={handleInputChange}
         className={styles.searchBox}
       />
 

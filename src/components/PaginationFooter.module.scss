@@ -1,8 +1,10 @@
+@import "../styles/globals";
+
 .footerContainer {
-  background-color: aliceblue;
+  background-color: $surface-bg;
   position: sticky;
   bottom: 0;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid $border-color;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -11,6 +13,10 @@
   & > div {
     padding: 1rem 2rem;
   }
+}
+
+.footerPlaceholder {
+  height: 67px;
 }
 
 .paginationFooter {
@@ -23,13 +29,14 @@
 
 .pageButton,
 .navButton {
-  background-color: #f3f3f3;
-  border: 1px solid #ddd;
-  color: #333;
+  background-color: $button-bg;
+  border: 1px solid $border-color;
+  color: $text-color;
   padding: 0.5rem 0.75rem;
   border-radius: 4px;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all $transition-fast;
+  font-family: inherit;
 
   &:disabled {
     opacity: 0.5;
@@ -37,12 +44,12 @@
   }
 
   &:hover:not(:disabled) {
-    background-color: #e5e5e5;
+    background-color: $button-hover-bg;
   }
 }
 
 .active {
-  background-color: #007bff;
+  background-color: $primary-color;
   color: #fff;
-  border-color: #007bff;
+  border-color: $primary-color;
 }

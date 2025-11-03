@@ -6,6 +6,7 @@ import ProductSearch from "../components/ProductSearch";
 import ProductSkeletonsLoader from "../components/SkeletonsLoader";
 import PaginationFooter from "../components/PaginationFooter";
 import { useProductsContext } from "../context/ProductPageContext";
+import { sleep } from "../utils";
 
 const ProductsPage: React.FC = () => {
   const { state, dispatch } = useProductsContext();
@@ -24,6 +25,7 @@ const ProductsPage: React.FC = () => {
       dispatch({ type: "FETCH_IN_PROGRESS" });
       const loadProducts = async () => {
         const allProducts = await fetchProducts();
+        await sleep(1000); // added delay to show skeleton loader animation
         dispatch({ type: "FETCH_SUCCESS", products: allProducts });
       };
       loadProducts();
@@ -44,7 +46,7 @@ const ProductsPage: React.FC = () => {
 
   useEffect(() => {
     dispatch({ type: "SET_PAGE", page: 1 });
-  }, [searchTerm, selectedCategory, dispatch]);
+  }, [searchTerm, selectedCategory, pageSize, dispatch]);
 
   const filteredProducts = useMemo(() => {
     return products.filter((p) => {
@@ -77,7 +79,7 @@ const ProductsPage: React.FC = () => {
         {isLoading ? (
           <ProductSkeletonsLoader count={pageSize} />
         ) : paginatedProducts.length > 0 ? (
-          paginatedProducts.map((product) => <ProductCard product={product} />)
+          paginatedProducts.map((product) => <ProductCard key={product.id} product={product} />)
         ) : (
           <div>{error || "No products found!"}</div>
         )}

@@ -1,0 +1,30 @@
+// Colors
+$primary-color: #007bff;
+$surface-bg: aliceblue;
+$border-color: #ddd;
+$bg-color: #fafafa;
+$card-bg: #fff;
+$text-color: #333;
+$text-strong: #420;
+
+// Layout
+$card-border-radius: 8px;
+$card-padding: 1rem;
+$card-max-height: 345px;
+$image-height: 150px;
+
+// Buttons
+$button-bg: #f3f3f3;
+$button-hover-bg: #e5e5e5;
+
+// Shadows
+$box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+
+// Transitions
+$transition-fast: 0.2s ease-in-out;
+
+// Skeleton loader
+$skeleton-shade-1: rgba(130, 130, 130, 0.2);
+$skeleton-shade-2: rgba(130, 130, 130, 0.3);
+$skeleton-bg-size: 800px 100px;
+$animation-pulse-duration: 2s;

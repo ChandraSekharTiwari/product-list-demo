@@ -16,7 +16,7 @@ const PaginationFooter: React.FC<PaginationFooterProps> = ({
   onPageChange,
   onPageSizeChange,
 }) => {
-  if (totalPages <= 1) return null;
+  if (totalPages <= 1) return <div className={styles.footerPlaceholder}></div>;
 
   const getPageNumbers = (): number[] => {
     const pages: number[] = [];
